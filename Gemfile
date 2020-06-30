@@ -10,4 +10,5 @@ gem 'rspec'
 gem 'rack'
 gem 'rubocop'
 gem 'simplecov'
+gem 'pg'
 # gem "rails"

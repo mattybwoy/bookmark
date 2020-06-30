@@ -5,13 +5,21 @@ require 'pg'
 class Bookmark < Sinatra::Base
 
   get '/' do
-    "Hello world"
     erb :index
   end
 
   get '/bookmarks' do
     @bookmarks = Bookmarks.all
     erb :bookmarks
+  end
+
+  post '/add_bookmark' do
+    Bookmarks.add(params[:bookmark_url])
+    redirect '/'
+  end
+
+  get '/add' do
+    erb :add
   end
 
     run! if app_file == $0

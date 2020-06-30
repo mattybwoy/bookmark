@@ -1,23 +1,21 @@
-
-
-
-feature 'index page content' do
-  before(:each) do
-    test_database('empty') 
-    test_database('setup')
-  end
-  scenario 'The page prints out hello world' do
-      visit('/')
-    expect(page).to have_content "Hello world"
-  end
-end
 feature 'bookmark page' do
   before(:each) do
     test_database('empty') 
     test_database('setup')
   end
   scenario 'prints a list of bookmarks' do
-      visit('/bookmarks')
+      visit('/')
+      click_button "See Bookmarks"
     expect(page).to have_content "http://www.test.com"
   end
-end
+  feature 'create bookmark' do
+    scenario 'Add bookmark and view added bookmark' do
+      visit('/')
+        click_button "Add Bookmarks"
+        fill_in('bookmark_url', with: 'http://www.anothertest.com') 
+        click_button "add"
+        click_button "See Bookmarks"
+          expect(page).to have_content 'http://www.anothertest.com'
+        end
+      end
+    end

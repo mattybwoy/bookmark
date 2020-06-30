@@ -6,8 +6,8 @@ def test_database(mode)
    begin
 
     output = []
-    con = PG.connect :dbname => 'bookmark_manager_test', :user => 'postgres',
-    :password => ''
+    con = PG.connect :dbname => 'bookmark_manager_test'#, :user => 'postgres',
+    #:password => ''
 
 case mode
     when 'empty' then con.exec "TRUNCATE TABLE bookmarks"

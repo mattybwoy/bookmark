@@ -11,8 +11,6 @@ class Bookmark < Sinatra::Base
 
   get '/bookmarks' do
     @bookmarks = Bookmarks.all
-    p "string"
-    p @bookmarks
     erb :bookmarks
   end
 

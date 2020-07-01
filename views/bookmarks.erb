@@ -1,1 +1,6 @@
-<%= @bookmarks %>
+<%# <%= @bookmarks %>
+<%#= @bookmarks <a href="/attack">Attack</a>%>
+<ul>  <% @bookmarks.each do |bookmark| %>    
+  <li><%= bookmark %></li>  
+  <% end %>
+</ul>

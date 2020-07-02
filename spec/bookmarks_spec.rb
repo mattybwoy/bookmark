@@ -11,4 +11,10 @@ describe Bookmarks do
       expect(bookmarks).to include("http://www.test.com")
     end
   end
+    describe 'Adds a bookmarks' do
+    it 'adds a bookmark to the bookmark list' do
+      bookmarks = Bookmarks.add("www.msn.co.uk", "msn")
+      expect(bookmarks).to eq('msn')
+    end
+  end
 end

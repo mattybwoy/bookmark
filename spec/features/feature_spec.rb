@@ -3,19 +3,20 @@ feature 'bookmark page' do
     test_database('empty') 
     test_database('setup')
   end
-  xscenario 'prints a list of bookmarks' do
+  scenario 'prints a list of bookmarks' do
       visit('/')
       click_button "See Bookmarks"
-    expect(page).to have_content "http://www.test.com"
+    expect(page).to have_content "test"
   end
   feature 'create bookmark' do
-    xscenario 'Add bookmark and view added bookmark' do
+    scenario 'Add bookmark and view added bookmark' do
       visit('/')
         click_button "Add Bookmarks"
-        fill_in('bookmark_url', with: 'http://www.anothertest.com')
+        fill_in('url', with: 'http://www.anothertest.com')
+        fill_in('title', with: 'anothertest')
         click_button "add"
         click_button "See Bookmarks"
-          expect(page).to have_content 'http://www.anothertest.com'
+          expect(page).to have_link 'anothertest'
         end
       end
       feature 'create title' do

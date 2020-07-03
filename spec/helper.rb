@@ -1,6 +1,3 @@
-
-
-
 def test_database(mode)
 
    begin
@@ -11,7 +8,7 @@ def test_database(mode)
 
 case mode
     when 'empty' then con.exec "TRUNCATE TABLE bookmarks"
-    when 'setup' then con.exec "INSERT INTO bookmarks (url) VALUES ('http://www.test.com')"
+    when 'setup' then con.exec "INSERT INTO bookmarks (title, url) VALUES ('test','http://www.test.com')"
 end
 
 rescue PG::Error => e

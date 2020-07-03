@@ -14,7 +14,6 @@ describe Bookmarks do
     describe 'Adds a bookmarks' do
     it 'adds a bookmark to the bookmark list' do
       Bookmarks.add("msn", "www.msn.co.uk")
-      #expect(bookmarks).to eq('msn')
       expect(Bookmarks.all.last.url).to eq("www.msn.co.uk")
     end
   end

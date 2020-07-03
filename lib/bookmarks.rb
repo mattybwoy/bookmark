@@ -31,7 +31,6 @@ class Bookmarks
       con = PG.connect :dbname => db_name#, :user => 'postgres',
       #:password => ''
       rs = con.exec "INSERT INTO bookmarks (title, url) VALUES ('#{title}','#{url}')"
-      #Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
     rescue PG::Error => e
         puts e.message 
 
